@@ -25,6 +25,6 @@ public class Train {
 
     private  int nbPlaceLibre;
 
- 
+
 
 }
