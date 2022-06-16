@@ -32,7 +32,6 @@ public class TrainService implements ITrainService{
         Voyage voy=voyageRepository.findById(idVoyage).orElse(null);
         Train tr=trainRepository.findById(idTrain).orElse(null);
         voy.setTrain(tr);
-        voyageRepository.save(voy);
         return voyageRepository.save(voy);
     }
 }
