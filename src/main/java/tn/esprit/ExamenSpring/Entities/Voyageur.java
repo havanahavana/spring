@@ -6,19 +6,21 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class User {
+public class Voyageur {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long idVoyageur;
+    private String nomVoyageur;
 
-    private Integer id;
+    @ManyToMany(mappedBy = "voyageurs")
+    private List<Voyage> voyages;
 
-    private String email;
 
-    private String password;
 }
